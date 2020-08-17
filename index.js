@@ -11,11 +11,13 @@ console.log('its working');
 (c) Home Team goals for 2014 world cup final
 (d) Away Team goals for 2014 world cup final
 (e) Winner of 2014 world cup final */
- console.log(fifaData[828]['Home Team Name']);
- console.log(fifaData[828]['Away Team Name']);
- console.log(fifaData[828]['Home Team Goals']);
- console.log(fifaData[828]['Away Team Goals']);
- console.log(fifaData[828]['Win conditions']);
+const finals2014 = fifaData.filter(item =>
+    item.Year === 2014 && item.Stage === 'Final')
+ console.log('Task a:', finals2014[0]['Home Team Name']);
+ console.log('Task b:', finals2014[0]['Away Team Name']);
+ console.log('Task c:', finals2014[0]['Home Team Goals']);
+ console.log('Task d:', finals2014[0]['Away Team Goals']);
+ console.log('Task e:', finals2014[0]['Win conditions']);
 
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
 
@@ -114,13 +116,14 @@ console.log('Task 6', getAverageGoals(fifaData));
 Hint: Investigate your data to find "team initials"!
 Hint: use `.reduce` */
 
-function getCountryWins(/* code here */) {
-
-    /* code here */
+function getCountryWins(data, teamInitials) {
+    return data.filter(item => {
+      
+    })
 
 };
 
-getCountryWins();
+console.log(getCountryWins(fifaData, 'BRA'));
 
 
 /* Stretch 3: Write a function called getGoals() that accepts a parameter `data` and returns the team with the most goals score per appearance (average goals for) in the World Cup finals */
