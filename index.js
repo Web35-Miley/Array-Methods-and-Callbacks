@@ -12,7 +12,7 @@ console.log('its working');
 (d) Away Team goals for 2014 world cup final
 (e) Winner of 2014 world cup final */
 const finals2014 = fifaData.filter(item =>
-    item.Year === 2014 && item.Stage === 'Final')
+    item["Year"] === 2014 && item.Stage === 'Final')
  console.log('Task a:', finals2014[0]['Home Team Name']);
  console.log('Task b:', finals2014[0]['Away Team Name']);
  console.log('Task c:', finals2014[0]['Home Team Goals']);
@@ -43,9 +43,9 @@ console.log('Task 3', getYears(getFinals(fifaData)));
 
 function getWinners(callback) {
     const winners = callback.map(item => {
-        if(item['Home Team Name'] > item['Away Team Name']) {
+        if(item['Home Team Goals'] > item['Away Team Goals']) {
             return item['Home Team Name']
-        } else if(item['Home Team Name'] < item['Away Team Name']) {
+        } else if(item['Home Team Goals'] < item['Away Team Goals']) {
             return item['Away Team Name']
         } else {
             return item['Win conditions']
